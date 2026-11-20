@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord Media Downloader Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/discord_media_bot
+ExecStart=/usr/bin/python3 bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/opt/discord_media_bot/.env
+
+[Install]
+WantedBy=multi-user.target
